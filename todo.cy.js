@@ -22,8 +22,9 @@ describe("Teste e2e do TodoList",()=>{
     });
 
     it('Deve ser possivel adicionar uma nova tarefa clicando no botão "Criar tarefa".', () => {
-        cy.get('[data-cy="createdTask"]').type('Ler uma HQ').click()
-        cy.get('[x-text="todo.task"]').should('have.text', 'Ler uma HQ')
+        cy.get('#todo_title').type('trabalhar')
+        cy.get('[data-cy="createdTask"]').click()
+        cy.contains('trabalhar').should('be.visible');
     });
 
     it('Deve ser possivel remover uma tarefa.', () => {
